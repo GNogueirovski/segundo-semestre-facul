@@ -14,7 +14,7 @@ public class PokemonHashMap {
                 String nome, tipo;
                 // Cadastro de Siglas e Nomes de Estado
                 do{
-                    nome = JOptionPane.showInputDialog("Digite o nome do pokemon ou FIM para continuar: ").toUpperCase();
+                    nome = JOptionPane.showInputDialog("Digite o nome do pokemon ou FIM para continuar: ");
 
                     if(!nome.equalsIgnoreCase("FIM")) {
                         if(!pokemon.containsKey(nome)) {
@@ -24,18 +24,26 @@ public class PokemonHashMap {
                             JOptionPane.showMessageDialog(null, "Pokemon já cadastrado!");
                         }
                     }
-                }while (!nome.equals("FIM"));
+                }while (!nome.equalsIgnoreCase("FIM"));
 
                 // Busca do tipo do pokemon
                 String escolha = JOptionPane.showInputDialog("Digite um tipo de pokemon a ser procurado");
+                ArrayList<String> nomesPokemon = new ArrayList<>();
                     for(Map.Entry<String, String> i : pokemon.entrySet()) {
                         if(escolha.equals(i.getValue())) {
-                            JOptionPane.showMessageDialog(null, i.getKey() + " " + i.getValue());
+                            nomesPokemon.add(i.getKey());
                         }
                         else{
                             JOptionPane.showMessageDialog(null, "Tipo de pokemon não cadastrado!");
                         }
                     }
+                    if (nomesPokemon.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Não foi encontrado nenhum pokemon deste tipo");
+                    }else{
+                        String mensagem = String.format("Pokemon do Tipo: %s \nPokemons: %s",escolha, nomesPokemon);
+                        JOptionPane.showMessageDialog(null, mensagem);
+                    }
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }
