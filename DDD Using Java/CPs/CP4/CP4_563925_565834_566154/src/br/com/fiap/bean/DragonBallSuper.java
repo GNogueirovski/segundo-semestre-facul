@@ -1,3 +1,4 @@
+// RM: 563925 - Gabriel Nogueira Peixoto ; RM:565834 - Mariana Inoue ; RM: 566154 - Giovanna Neri dos Santos
 package br.com.fiap.bean;
 
 import br.com.fiap.interfaces.IDBSuper;
@@ -8,6 +9,7 @@ import java.io.*;
  * Classe que representa o personagem de Dragon Ball Super
  * Implementa a interface IDBSuper com os métodos de leitura e gravação de arquivos
  * @version 1.0
+ * @author Giovanna Neri
  * @author Gabriel Nogueira
  */
 public class DragonBallSuper implements IDBSuper {
@@ -68,9 +70,9 @@ public class DragonBallSuper implements IDBSuper {
      */
 
     public DragonBallSuper ler(String path) throws IOException {
-
+        String nomeArquivo = nome.replaceAll(" ", "_").toLowerCase();
         BufferedReader br = new BufferedReader(
-                new FileReader(path + "/" + nome + ".txt"));
+                new FileReader(path + "/" + nomeArquivo + ".txt"));
 
         nome = br.readLine();
         ki = Integer.parseInt(br.readLine());
@@ -95,7 +97,8 @@ public class DragonBallSuper implements IDBSuper {
             if(!dir.exists()){
                 dir.mkdir();
             }
-            PrintWriter pw = new PrintWriter(path + "/" + nome + ".txt");
+            String nomeArquivo = nome.replaceAll(" ", "_").toLowerCase();
+            PrintWriter pw = new PrintWriter(path + "/" + nomeArquivo + ".txt");
             pw.println(nome);
             pw.println(ki);
             pw.println(tecnica);

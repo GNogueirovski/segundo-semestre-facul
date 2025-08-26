@@ -5,8 +5,6 @@ import br.com.fiap.bean.DragonBallSuper;
 import javax.swing.*;
 import java.io.IOException;
 
-import static javax.swing.JOptionPane.showInputDialog;
-
 public class UsaDBSuper {
     public static void main(String[] args) {
         String nome, path;
@@ -15,21 +13,21 @@ public class UsaDBSuper {
 
         do{
             try{
-                opcao = Integer.parseInt(showInputDialog("Escolha\n1.Cadastrar um personagem\n2.Consultar um personagem"));
-                path = showInputDialog("Digite o caminho da pasta");
+                opcao = Integer.parseInt(JOptionPane.showInputDialog("Escolha\n1.Cadastrar um personagem\n2.Consultar um personagem"));
+                path = JOptionPane.showInputDialog("Digite o caminho da pasta");
                 personagem = new DragonBallSuper();
                 switch (opcao){
                     case 1:
-                        personagem.setNome(showInputDialog("Digite o nome do personagem"));
-                        personagem.setKi(Integer.parseInt(showInputDialog("Digite a quantos pontos de KI que esse personagem possui: ")));
-                        personagem.setTecnica(Integer.parseInt(showInputDialog("Digite a quantos pontos de Técnica que esse personagem possui: ")));
-                        personagem.setVelocidade(Integer.parseInt(showInputDialog("Digite a quantos pontos de velocidade que esse personagem possui: ")));
-                        personagem.setTransformacao(Integer.parseInt(showInputDialog("Digite a quantidade de transformações que esse personagem faz: ")));
+                        personagem.setNome(JOptionPane.showInputDialog("Digite o nome do personagem"));
+                        personagem.setKi(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantos pontos de KI que esse personagem possui: ")));
+                        personagem.setTecnica(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantos pontos de Técnica que esse personagem possui: ")));
+                        personagem.setVelocidade(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantos pontos de velocidade que esse personagem possui: ")));
+                        personagem.setTransformacao(Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de transformações que esse personagem faz: ")));
 
                         JOptionPane.showMessageDialog(null,personagem.gravar(path));
                         break;
                     case 2:
-                        personagem.setNome(showInputDialog("Digite o nome do personagem"));
+                        personagem.setNome(JOptionPane.showInputDialog("Digite o nome do personagem"));
                         personagem = personagem.ler(path);
                         if (personagem == null) {
                             JOptionPane.showMessageDialog(null, "Caminho e/ou nome de arquivo inexistente");
