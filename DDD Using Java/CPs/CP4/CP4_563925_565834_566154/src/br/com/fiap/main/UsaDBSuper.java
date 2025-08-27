@@ -22,22 +22,22 @@ public class UsaDBSuper {
         DragonBallSuper personagem;
 
         do{
-            JOptionPane.showMessageDialog(null, "Bem-vindo ao Programa de Dragon Ball Super");
+            JOptionPane.showMessageDialog(null, "Bem-vindo ao Programa de Dragon Ball Super", "Welcome", JOptionPane.INFORMATION_MESSAGE);
             try{
-                opcao = Integer.parseInt(JOptionPane.showInputDialog("Escolha uma das opções abaixo:\n1.Cadastrar um personagem de DB Super\n2.Procurar um personagem de DB Super"));
+                opcao = Integer.parseInt(JOptionPane.showInputDialog(null, "Escolha uma das opções abaixo:\n1.Cadastrar um personagem de DB Super\n2.Procurar um personagem de DB Super", "Menu de Seleção", JOptionPane.QUESTION_MESSAGE));
                 personagem = new DragonBallSuper();
                 switch (opcao){
                     case 1:
-                        path = JOptionPane.showInputDialog("Digite o caminho da pasta que onde será salvo o arquivo com as informações do personagem");
+                        path = JOptionPane.showInputDialog(null, "Digite o caminho da pasta onde será salvo as informações do personagem", "Caminho da Pasta", JOptionPane.QUESTION_MESSAGE);
 
-                        nome = JOptionPane.showInputDialog("Digite o nome do personagem");
+                        nome = JOptionPane.showInputDialog(null, "Digite o nome do personagem", "Pergunta", JOptionPane.QUESTION_MESSAGE);
 
-                        ki = Integer.parseInt(JOptionPane.showInputDialog("Digite quantos pontos de KI esse personagem possui"));
+                        ki = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite quantos pontos de KI esse personagem possui","Pergunta", JOptionPane.QUESTION_MESSAGE));
 
-                        tecnica = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantos pontos de Técnica que esse personagem possui: "));
-                        velocidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantos pontos de velocidade que esse personagem possui: "));
+                        tecnica = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantos pontos de Técnica que esse personagem possui: ", "Pergunta", JOptionPane.QUESTION_MESSAGE));
+                        velocidade = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantos pontos de velocidade que esse personagem possui: ", "Pergunta", JOptionPane.QUESTION_MESSAGE));
 
-                        transformacao = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade de transformações que esse personagem faz: "));
+                        transformacao = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de transformações que esse personagem faz: ", "Pergunta", JOptionPane.QUESTION_MESSAGE));
 
                         personagem.setNome(nome);
                         personagem.setKi(ki);
@@ -48,14 +48,14 @@ public class UsaDBSuper {
                         JOptionPane.showMessageDialog(null,personagem.gravar(path));
                         break;
                     case 2:
-                        path = JOptionPane.showInputDialog("Digite o caminho da pasta onde foi salvo o arquivo do personagem");
+                        path = JOptionPane.showInputDialog(null, "Digite o caminho da pasta onde foi salvo o arquivo do personagem", "Caminho da Pasta", JOptionPane.QUESTION_MESSAGE);
 
-                        nome = JOptionPane.showInputDialog("Digite o nome do personagem");
+                        nome = JOptionPane.showInputDialog(null, "Digite o nome do personagem", "Pergunta", JOptionPane.QUESTION_MESSAGE);
                         personagem.setNome(nome);
 
                         personagem = personagem.ler(path);
                         if (personagem == null) {
-                            JOptionPane.showMessageDialog(null, "Caminho e/ou nome de arquivo inexistente");
+                            JOptionPane.showMessageDialog(null, "Caminho e/ou nome de arquivo inexistente", "Atenção", JOptionPane.WARNING_MESSAGE);
                         }else{
                             JOptionPane.showMessageDialog(null, "Informações do Arquivo"
                                     + "\nCaminho: " + path
@@ -69,15 +69,15 @@ public class UsaDBSuper {
                         }
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "Escolha incorreta, selecione uma das opções disponíveis");
+                        JOptionPane.showMessageDialog(null, "Escolha incorreta, selecione uma das opções disponíveis", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
 
             } catch (NumberFormatException e ) {
-                JOptionPane.showMessageDialog(null, "Erro de conversão: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro de conversão: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }catch (IOException e ) {
-                JOptionPane.showMessageDialog(null, "Erro ao acessar arquivo: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro ao acessar arquivo: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }
 
 
