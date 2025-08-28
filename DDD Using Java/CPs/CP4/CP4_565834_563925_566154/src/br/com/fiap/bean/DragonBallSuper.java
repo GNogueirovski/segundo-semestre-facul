@@ -9,8 +9,9 @@ import java.io.*;
  * Classe que representa o personagem de Dragon Ball Super
  * Implementa a interface IDBSuper com os métodos de leitura e gravação de arquivos
  * @version 1.0
- * @author Giovanna Neri
  * @author Gabriel Nogueira
+ * @author Giovanna Neri
+ * @author Mariana Inoue
  */
 public class DragonBallSuper implements IDBSuper {
     private String nome;

@@ -9,6 +9,8 @@ import java.io.IOException;
  * Interface com as assinaturas dos métodos ler, que lança uma Exception de I/O e o metodo gravar.
  * @version 1.0
  * @author Gabriel Nogueira
+ * @author Giovanna Neri
+ * @author Mariana Inoue
  */
 public interface IDBSuper {
     public DragonBallSuper ler (String path) throws IOException;

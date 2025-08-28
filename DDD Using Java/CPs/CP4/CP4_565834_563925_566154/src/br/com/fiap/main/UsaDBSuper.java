@@ -10,8 +10,9 @@ import java.io.IOException;
 /**
  * Classe de teste com o metedo main, que através da interação com o usuário faz o cadastro de um personagem de DB Super,
  * e procura um personagem no sistema em uma determinada pasta, salvando um arquivo txt com seus atributos
- * @author Mariana Inoue
  * @author Gabriel Nogueira
+ * @author Giovanna Neri
+ * @author Mariana Inoue
  * @version 1.0
  */
 public class UsaDBSuper {
