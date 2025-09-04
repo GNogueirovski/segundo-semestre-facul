@@ -17,7 +17,7 @@ public class TesteRead {
 
         if (resultado != null) {
             for (CarroDTO carro : resultado) {
-                System.out.printf("Placa: %s\nCor: %s\nDescricao: %s\n", carro.getPlaca(), carro.getCor(), carro.getDescricao());
+                System.out.printf("Placa: %s\nCor: %s\nDescricao: %s\n\n", carro.getPlaca(), carro.getCor(), carro.getDescricao());
             }
         }
 
