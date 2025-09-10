@@ -1,18 +1,18 @@
 package br.com.fiap.dao;
 
 import br.com.fiap.dto.CarroDTO;
+import br.com.fiap.dto.ClienteDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
-public class CarroDAO {
+public class ClienteDAO {
     private Connection con;
 
-    public CarroDAO(Connection con) {
+    public ClienteDAO(Connection con) {
         this.con = con;
     }
 
@@ -20,12 +20,12 @@ public class CarroDAO {
         return con;
     }
 
-    public String inserir(CarroDTO carro) {
-        String sql = "INSERT INTO ddd_carro (placa, cor, descricao) VALUES (?, ?, ?)";
+    public String inserir(ClienteDTO cliente) {
+        String sql = "INSERT INTO ddd_cliente (id_cliente, nome_cliente, placa) VALUES (?, ?, ?)";
         try (PreparedStatement ps = getCon().prepareStatement(sql)) {
-            ps.setString(1, carro.getPlaca());
-            ps.setString(2, carro.getCor());
-            ps.setString(3, carro.getDescricao());
+            ps.setInt(1, cliente.getIdCliente());
+            ps.setString(2, cliente.getNomeCliente());
+            ps.setString(3, cliente.getPlaca());
 
             if (ps.executeUpdate() > 0) {
                 return "Inserido com sucesso";
@@ -40,13 +40,12 @@ public class CarroDAO {
 
     }
 
-    public String alterar(CarroDTO carro) {
-        String sql = "UPDATE ddd_carro SET cor=?, descricao=? WHERE placa=?";
+    public String alterar(ClienteDTO cliente) {
+        String sql = "UPDATE ddd_cliente SET nome_cliente=? WHERE id_cliente=?";
 
         try(PreparedStatement ps = getCon().prepareStatement(sql)){
-            ps.setString(1, carro.getCor());
-            ps.setString(2, carro.getDescricao());
-            ps.setString(3, carro.getPlaca());
+            ps.setString(1, cliente.getNomeCliente());
+            ps.setInt(2, cliente.getIdCliente());
             if (ps.executeUpdate() > 0) {
                 return "Valores alterados com sucesso";
             } else {
@@ -57,10 +56,10 @@ public class CarroDAO {
             return "Erro no comando SQL " + e.getMessage();
         }
     }
-    public String excluir(CarroDTO carro) {
-        String sql = "DELETE FROM ddd_carro WHERE placa=?";
+    public String excluir(ClienteDTO cliente) {
+        String sql = "DELETE FROM ddd_cliente WHERE id_cliente=?";
         try(PreparedStatement ps = getCon().prepareStatement(sql)){
-            ps.setString(1, carro.getPlaca());
+            ps.setInt(1, cliente.getIdCliente());
             if (ps.executeUpdate() > 0) {
                 return "Excluido com Sucesso";
             } else {
@@ -72,21 +71,21 @@ public class CarroDAO {
         }
     }
 
-    public ArrayList<CarroDTO> listar() {
-        String sql = "SELECT * FROM ddd_carro order by placa";
+    public ArrayList<ClienteDTO> listar() {
+        String sql = "SELECT * FROM ddd_cliente order by id_cliente";
 
-        ArrayList<CarroDTO> carros = new ArrayList<>();
+        ArrayList<ClienteDTO> clientes = new ArrayList<>();
         try(PreparedStatement ps = getCon().prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();) {
+            ResultSet rs = ps.executeQuery();) {
             if (rs != null) {
                 while (rs.next()){
-                    CarroDTO carro = new CarroDTO();
-                    carro.setPlaca(rs.getString(1));
-                    carro.setCor(rs.getString(2));
-                    carro.setDescricao(rs.getString(3));
-                    carros.add(carro);
+                    ClienteDTO cliente = new ClienteDTO();
+                    cliente.setIdCliente(rs.getInt(1));
+                    cliente.setNomeCliente(rs.getString(2));
+                    cliente.setPlaca(rs.getString(3));
+                    clientes.add(cliente);
                 }
-                return carros;
+                return clientes;
             } else {
                 return null;
             }
@@ -96,4 +95,6 @@ public class CarroDAO {
         }
 
     }
+
+
 }

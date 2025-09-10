@@ -6,17 +6,17 @@ import br.com.fiap.dto.CarroDTO;
 
 import java.sql.Connection;
 
-public class TesteCreate {
+public class TesteUpdate {
     public static void main(String[] args) {
         Connection con = ConnectionFactory.abrirConexao();
 
         CarroDTO carro = new CarroDTO();
-        carro.setCor("Preto");
-        carro.setPlaca("GUI1985");
-        carro.setDescricao("Volvo XC60");
+        carro.setCor("Vermelho Sangue");
+        carro.setPlaca("EEE1295");
+        carro.setDescricao("Ford Mustang 1969");
 
         CarroDAO carroDAO = new CarroDAO(con);
-        System.out.println(carroDAO.inserir(carro));
+        System.out.println(carroDAO.alterar(carro));
 
         ConnectionFactory.fecharConexao(con);
     }
