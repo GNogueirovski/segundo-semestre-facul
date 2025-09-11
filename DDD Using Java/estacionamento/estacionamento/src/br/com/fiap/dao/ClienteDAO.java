@@ -93,6 +93,10 @@ public class ClienteDAO {
             System.out.println("Erro no comando SQL " + e.getMessage());
             return null;
         }
+    }
+
+    public static void manipularCliente(){
+
 
     }
 
