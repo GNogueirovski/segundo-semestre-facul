@@ -20,6 +20,8 @@ public class ConnectionFactory {
 
         } catch (SQLException e) {
             System.out.println("Erro de SQL: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
         }
         return con;
     }
@@ -30,6 +32,8 @@ public class ConnectionFactory {
             System.out.println("Conexão fechada com sucesso!");
         } catch (SQLException e) {
             System.out.println("Erro de SQL: " + e.getMessage());
+        }catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 }
