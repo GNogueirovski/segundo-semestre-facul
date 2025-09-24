@@ -1,128 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="db5b8474-e889-49ca-b235-ced043b4a8d6" name="Changes" comment="feat: adding Cliente DAO, DTO, View and Parking View.">
-      <change beforePath="$PROJECT_DIR$/../../../BuscaBinaria/.idea/BuscaBinaria.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BuscaBinaria/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BuscaBinaria/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BuscaBinaria/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BuscaBinaria/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../BuscaBinaria/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="ec4f532d-182b-4b5e-ab14-75a90bca5c1e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Challenge/1 - semestre/2-semestre/Java/new-elo-imrea-challenge" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/BD/e835e921c78f6196579f062602ae80810291b83c6a467a5b5084f01706e42bb1 (1)/1TDSR - BugBuddies.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/Front/Projeto-Elo-IMREA-final/Projeto-Elo-IMREA" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/Front/Projeto-Elo-IMREA-final/Projeto-Elo-IMREA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/Java/new-elo-imrea-challenge" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/Java/new-elo-imrea-challenge" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/Python/elo-irea-challenge-python" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Challenge/1 - semestre/Challenge - 1 semestre/Repositórios/Python/elo-irea-challenge-python" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;GNogueirovski&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/spbie/Desktop/WORKSPACE/Faculdade/segundo-semestre-facul/DDD Using Java/parking/parking"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/GNogueirovski/segundo-semestre-facul.git&quot;,
-    &quot;accountId&quot;: &quot;308f226c-b291-4da6-a474-d8ec1a5045ca&quot;
-  }
-}</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="32pvJ8axBD39WYkZT9QA0CRx0VQ" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabriel.peixoto/Desktop/workspace/outros/segundo-semestre-facul/DDD Using Java/parking/parking&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="br.com.fiap.controller" />
-    </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.109" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.109" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="db5b8474-e889-49ca-b235-ced043b4a8d6" name="Changes" comment="" />
-      <created>1758130253658</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1758130253658</updated>
-      <workItem from="1758130254730" duration="27000" />
-      <workItem from="1758130315628" duration="340000" />
-      <workItem from="1758130668674" duration="1329000" />
-      <workItem from="1758136625393" duration="97000" />
-      <workItem from="1758308398222" duration="20000" />
-      <workItem from="1758374801487" duration="7000" />
-      <workItem from="1758375548020" duration="11000" />
-      <workItem from="1758375569506" duration="7000" />
-      <workItem from="1758375842315" duration="7000" />
-      <workItem from="1758376289179" duration="26000" />
-      <workItem from="1758376341586" duration="14000" />
-      <workItem from="1758376382582" duration="7000" />
-      <workItem from="1758376525554" duration="39000" />
-      <workItem from="1758377115177" duration="25000" />
-      <workItem from="1758396279280" duration="631000" />
-      <workItem from="1758398793300" duration="3000" />
-      <workItem from="1758400224115" duration="3378000" />
-      <workItem from="1758425876918" duration="16000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat: adding Cliente DAO, DTO, View and Parking View.">
-      <option name="closed" value="true" />
-      <created>1758136684682</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1758136684682</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: adding Cliente DAO, DTO, View and Parking View." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adding Cliente DAO, DTO, View and Parking View." />
   </component>
 </project>
