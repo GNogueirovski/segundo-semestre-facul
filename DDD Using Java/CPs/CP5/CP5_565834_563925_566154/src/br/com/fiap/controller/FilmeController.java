@@ -65,16 +65,15 @@ public class FilmeController {
 
         FilmeDAO filmeDAO = new FilmeDAO(con);
         ArrayList<Filme> filmes = filmeDAO.listarTodos();
+        ConnectionFactory.fecharConexao(con);
         if (filmes != null && !filmes.isEmpty()) {
         for (Filme filme : filmes) {
             String filmeIndividual = String.format("Código: %s\nFilme: %s\nGenero: %s\nProdutora: %s\n", filme.getCodigo(), filme.getTitulo(), filme.getGenero(), filme.getProdutora());
 
             listaFilme += filmeIndividual + "\n";
         }} else {
-            ConnectionFactory.fecharConexao(con);
             return "Não existe nenhum filme para ser listado";
         }
-        ConnectionFactory.fecharConexao(con);
         return listaFilme;
     }
 }
