@@ -1,5 +1,4 @@
 // RM: 563925 - Gabriel Nogueira Peixoto ; RM:565834 - Mariana Inoue ; RM: 566154 - Giovanna Neri dos Santos
-
 package br.com.fiap.model.dao;
 
 import br.com.fiap.model.dto.Filme;
@@ -10,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class FilmeDAO implements IDAO {
+public class FilmeDAO {
     private Connection con;
 
     public FilmeDAO(Connection con) {
@@ -25,9 +24,11 @@ public class FilmeDAO implements IDAO {
 
         String sql = "INSERT INTO ddd_filme (titulo, genero, produtora) VALUES (?, ?, ?)";
         try (PreparedStatement ps = getCon().prepareStatement(sql)) {
+
             ps.setString(1, filme.getTitulo());
             ps.setString(2, filme.getGenero());
             ps.setString(3, filme.getProdutora());
+
             if (ps.executeUpdate() > 0) {
                 return "Inserido com sucesso";
             } else {
@@ -77,17 +78,19 @@ public class FilmeDAO implements IDAO {
     public ArrayList<Filme> listarTodos() {
 
         String sql = "SELECT * FROM ddd_filme order by codigo";
+
         ArrayList<Filme> filmes = new ArrayList<>();
 
         try(PreparedStatement ps = getCon().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();) {
+            ResultSet rs = ps.executeQuery()) {
             if (rs != null) {
                 while (rs.next()){
                     Filme filme = new Filme();
-                    filme.setCodigo(rs.getInt(1));
-                    filme.setTitulo(rs.getString(2));
-                    filme.setGenero(rs.getString(3));
-                    filme.setProdutora(rs.getString(4));
+                    filme.setCodigo(rs.getInt("codigo"));
+                    filme.setTitulo(rs.getString("titulo"));
+                    filme.setGenero(rs.getString("genero"));
+                    filme.setProdutora(rs.getString("produtora"));
+
                     filmes.add(filme);
                 }
                 return filmes;
@@ -96,8 +99,7 @@ public class FilmeDAO implements IDAO {
             }
         } catch (SQLException e) {
             System.out.println("Erro no comando SQL " + e.getMessage());
-            return null;
         }
-
+        return null;
     }
 }

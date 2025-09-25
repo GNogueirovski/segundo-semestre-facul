@@ -15,64 +15,69 @@ public class FilmeController {
     public String inserirFilme(String titulo, String genero, String produtora) throws ClassNotFoundException, SQLException {
         String resultado;
 
-        Connection con = ConnectionFactory.abrirConexao();
 
         Filme filme = new Filme();
         filme.setTitulo(titulo);
         filme.setGenero(genero);
         filme.setProdutora(produtora);
 
+        Connection con = ConnectionFactory.abrirConexao();
         FilmeDAO filmeDAO = new FilmeDAO(con);
         resultado = filmeDAO.inserir(filme);
         ConnectionFactory.fecharConexao(con);
+
         return resultado;
     }
 
     public String alterarFilme(int codigo,String titulo, String genero, String produtora) throws ClassNotFoundException, SQLException{
         String resultado;
 
-        Connection con = ConnectionFactory.abrirConexao();
-
         Filme filme = new Filme();
         filme.setCodigo(codigo);
         filme.setTitulo(titulo);
         filme.setGenero(genero);
         filme.setProdutora(produtora);
 
+        Connection con = ConnectionFactory.abrirConexao();
         FilmeDAO filmeDAO = new FilmeDAO(con);
         resultado = filmeDAO.alterar(filme);
         ConnectionFactory.fecharConexao(con);
+
         return resultado;
     }
 
     public String excluirFilme(int codigo) throws ClassNotFoundException, SQLException{
         String resultado;
 
-        Connection con = ConnectionFactory.abrirConexao();
+
 
         Filme filme = new Filme();
         filme.setCodigo(codigo);
 
+        Connection con = ConnectionFactory.abrirConexao();
         FilmeDAO filmeDAO = new FilmeDAO(con);
         resultado = filmeDAO.excluir(filme);
         ConnectionFactory.fecharConexao(con);
+
         return resultado;
     }
 
     public String listarTodosFilmes() throws ClassNotFoundException, SQLException{
         String listaFilme = "";
-        Connection con = ConnectionFactory.abrirConexao();
+        ArrayList<Filme> filmes;
 
+        Connection con = ConnectionFactory.abrirConexao();
         FilmeDAO filmeDAO = new FilmeDAO(con);
-        ArrayList<Filme> filmes = filmeDAO.listarTodos();
+        filmes = filmeDAO.listarTodos();
         ConnectionFactory.fecharConexao(con);
-        if (filmes != null && !filmes.isEmpty()) {
+
+        if (filmes == null || filmes.isEmpty()){
+            return "Não existe nenhum filme para ser listado";
+        }
+
         for (Filme filme : filmes) {
             String filmeIndividual = String.format("Código: %s\nFilme: %s\nGenero: %s\nProdutora: %s\n", filme.getCodigo(), filme.getTitulo(), filme.getGenero(), filme.getProdutora());
-
             listaFilme += filmeIndividual + "\n";
-        }} else {
-            return "Não existe nenhum filme para ser listado";
         }
         return listaFilme;
     }

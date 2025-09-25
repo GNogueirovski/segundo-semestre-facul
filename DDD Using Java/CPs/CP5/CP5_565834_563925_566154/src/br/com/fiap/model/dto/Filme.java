@@ -1,3 +1,5 @@
+// RM: 563925 - Gabriel Nogueira Peixoto ; RM:565834 - Mariana Inoue ; RM: 566154 - Giovanna Neri dos Santos
+
 package br.com.fiap.model.dto;
 
 public class Filme {
