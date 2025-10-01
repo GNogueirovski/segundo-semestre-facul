@@ -94,8 +94,6 @@ public class FilmeDAO {
                     filmes.add(filme);
                 }
                 return filmes;
-            } else {
-                return null;
             }
         } catch (SQLException e) {
             System.out.println("Erro no comando SQL " + e.getMessage());
